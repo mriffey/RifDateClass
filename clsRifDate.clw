@@ -82,6 +82,21 @@ RifDateClass.ConvertUTCToLocalTime         PROCEDURE(LONG pDate, LONG pTime, *LO
  
  RETURN 
  
+!------------------------------------------------------- 
+RifDateClass.GetDaysInMonth PROCEDURE(LONG pDate)  ! contributed by Jeff Slarve 2022-12-20
+
+FirstDayOfNextMonth LONG
+LastDayOfThisMonth  LONG
+
+  CODE
+  
+ !Subtract 1 from the first day of the following month
+ FirstDayOfNextMonth = DATE(MONTH(pDate)+1,1,YEAR(pDate)) 
+ LastDayOfThisMonth  = FirstDayOfNextMonth - 1 
+
+ RETURN DAY(LastDayOfThisMonth)
+  
+ 
 !-------------------------------------------------------
 RifDateClass.DaysInMonth                   PROCEDURE(LONG pDate) !,LONG 
 

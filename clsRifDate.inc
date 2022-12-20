@@ -53,6 +53,7 @@ SetToday                    PROCEDURE()
 
 GetLastXXXDayOfTheMonth     PROCEDURE(LONG pDate, LONG pWhichWeekDay),LONG
 DaysInMonth                 PROCEDURE(LONG pDate),LONG 
+GetDaysInMonth              PROCEDURE(LONG pDate)
 
 DetermineTimeZone           PROCEDURE()
 ConvertUTCToLocalTime       PROCEDURE(LONG pDate, LONG pTime, *LONG pLocalDate, *LONG pLocalTime)
